@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        table {
+            width: auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 35px;
+            box-shadow: 1px 1px 15px 8px indianred;
+            animation: color 8s linear infinite;
+
+        }
+        td{
+            width: 33.33%;
+        }
+
+        .numbers {
+            text-transform: uppercase;
+            background-color: wheat;
+            width: 97%;
+            font-weight: 900;
+            text-align: center;
+            height: 95px;
+            border-radius: 35px;
+            font-size: 18px;
+            outline: white;
+            border: white;
+            box-shadow: 1px 1px 15px 8px indianred;
+            animation: color 3s linear infinite;
+
+        }
+
+        .buttons {
+            text-transform: uppercase;
+            background-color: wheat;
+            font-weight: 900;
+            width: 100%;
+            height: 95px;
+            border-radius: 35px;
+            text-align: center;
+            font-size: 18px;
+            outline: white;
+            border: white;
+            box-shadow: 1px 1px 15px 8px indianred;
+            animation: color 3s linear infinite;
+
+        }
+        @keyframes color {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        h1 {
+            color: teal;
+            text-shadow: 2px 2px 4px indianred;
+            animation: color 1s linear infinite;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+
+    <table id="calc"  border="0" cellspacing="10px" align="center" style="padding: 35px; border-radius: 35px;">
+        <caption>
+            <h1 align="center"> </h1>
+        </caption>
+        <tr style="empty-cells: hide;">
+            <td><input type="button" value="Switch Off" class="buttons" id="switchOff" onclick="off()"></td>
+            <td rowspan="1"><input type="button" value="Github" class="buttons" id="github" onclick="location.href='https://github.com/anmolmain'" ></td>
+            <td><input type="button" value="Switch ON" class="buttons" id="SwitchON" onclick="on()"></td>
+        </tr>
+        <tr>
+            <td><input type="number" placeholder="NUMBER 1" class="numbers" id="Number1"></td>
+            <td><input type="number" placeholder="NUMBER 2" class="numbers" id="Number2"></td>
+            <td><input type="text" placeholder="ANSWER" class="numbers" id="answer"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="ADD" class="buttons" id="add" onclick="sum()"></td>
+            <td><input type="button" value="string add" class="buttons" id="stringAdd" onclick="str()"></td>
+            <td><input type="button" value="SUBTRACT" class="buttons" id="subtract" onclick="sub()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="MULTIPLY" class="buttons" id="multiply" onclick="mul()"></td>
+           <td><input type="button" value="Power" class="buttons" id="power" onclick="pow()"></td>
+            <td><input type="button" value="DIVIDE" class="buttons" id="divide" onclick="div()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="REMAINDER" class="buttons" id="remainder" onclick="rem()"></td>
+            <td><input type="button" value="Percentage" class="buttons" id="percentage" onclick="per()"></td>
+            <td><input type="button" value="RESET" class="buttons" id="reset" onclick="fun()"></td>
+        </tr>
+    </table>
+
+
+    <script>
+        function off() {
+            document.getElementById("switchOff").disabled = true;
+            document.getElementById("Number1").disabled = true;
+            document.getElementById("Number2").disabled = true;
+            document.getElementById("answer").disabled = true;
+            document.getElementById("add").disabled = true;
+            document.getElementById("subtract").disabled = true;
+            document.getElementById("multiply").disabled = true;
+            document.getElementById("divide").disabled = true;
+            document.getElementById("remainder").disabled = true;
+            document.getElementById("reset").disabled = true;
+            document.getElementById("stringAdd").disabled = true;
+            document.getElementById("power").disabled = true;
+            document.getElementById("percentage").disabled = true;
+            document.getElementById("github").disabled = true;
+        }
+        function on() {
+            document.getElementById("switchOff").disabled = false;
+            document.getElementById("Number1").disabled = false;
+            document.getElementById("Number2").disabled = false;
+            document.getElementById("add").disabled = false;
+            document.getElementById("subtract").disabled = false;
+            document.getElementById("multiply").disabled = false;
+            document.getElementById("divide").disabled = false;
+            document.getElementById("remainder").disabled = false;
+            document.getElementById("reset").disabled = false;
+            document.getElementById("stringAdd").disabled = false;
+            document.getElementById("power").disabled = false;
+            document.getElementById("percentage").disabled = false;
+            document.getElementById("github").disabled = false;false
+        }
+        function sum() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a + b;
+            document.getElementById('answer').value = c;
+        }
+        function mul() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a * b;
+            document.getElementById('answer').value = c;
+        }
+        function div() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a / b;
+            document.getElementById('answer').value = (c.toFixed(4));
+        }
+        function sub() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a - b;
+            document.getElementById('answer').value = c;
+        }
+        function rem() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a % b;
+            document.getElementById('answer').value = c;
+        }
+        function pow() {
+            var a = document.getElementById('Number1').value;
+            a = parseInt(a)
+            var b = document.getElementById('Number2').value;
+            b = parseInt(b)
+            var c = a ** b;
+            document.getElementById('answer').value = c;
+        }
+        function str() {
+            var a = document.getElementById('Number1').value;
+            var b = document.getElementById('Number2').value;
+            var c = a + b;
+            document.getElementById('answer').value = c;
+        }
+        function per() {
+            var a = document.getElementById('Number1').value;
+            var b = document.getElementById('Number2').value;
+            var c = (a/b)*100;
+            document.getElementById('answer').value = (c.toFixed(2))+"%";
+        }
+
+        function fun() {
+            document.getElementById("Number1").value="";
+            document.getElementById("Number2").value="";
+            document.getElementById("answer").value="";
+        }
+        
+    </script>
+</body>
+
+</html>
